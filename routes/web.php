@@ -12,6 +12,8 @@
 */
 
 Route::get('/', 'GetPasswordController@index');
+Route::post('/', 'PostPasswordController@index');
+
 
 if (config('app.env') == 'local') {
   Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

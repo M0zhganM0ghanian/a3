@@ -15,10 +15,12 @@
 <div class="container">
   <h1>Password Generator</h1>
   <div class='form'>
-    <form method='GET' action='index.php'>
+    <form method='POST' action='index.php'>
+      {{ csrf_field() }}
+
       <div class='NumOfWords'>
         <label>Number Of Characters (required)</label>
-        <input type='text' name='numOfWords' required  id='NumOfWords'>
+        <input type='text' name='numOfWords' required  id='NumOfWords' value='{{ old('numOfWords') }}'>
       </div>
 
       <div class='checkbox'>
@@ -48,21 +50,23 @@
     </form>
   </div>
 </div>
-
-<?php if($errors): ?>
+@if(count($errors) > 0)
   <div class='alert alert-danger'>
     <ul>
-      <?php foreach($errors as $error): ?>
-        <li><?=$error?></li>
-      <?php endforeach; ?>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li>
+        @endforeach
     </ul>
   </div>
-<?php elseif($form->isSubmitted()): ?>
+@endif
+
+@if($form->isSubmitted())
+
   <div class='alert alert-info'>Number of words : <?=$form->sanitize($length)?></div>
         <div class="result">
           <h2><?=$createdPassword?></h2>
         </div>
-<?php endif; ?>
+@endif
 
 @endsection
 
