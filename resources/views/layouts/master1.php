@@ -11,8 +11,6 @@
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-	<link href="/css/masterLayout.css" type='text/css' rel='stylesheet'>
-
     @stack('head')
 
 </head>
@@ -22,35 +20,40 @@
 		<nav class="navbar navbar-inverse">
 			<div class="container-fluid">
 				<div class="navbar-header">
-					<a class="navbar-brand" href="/"><span class="glyphicon glyphicon-home"></span></a>
+					<a class="navbar-brand" href="#">WebSiteName</a>
 				</div>
 				<ul class="nav navbar-nav">
-					<li><a href="random">About</a></li>
-					<li><a href="generate">Generate Password</a></li>
-					<li><a href="help">Help </a></li>
+					<li class="active"><a href="/">Home</a></li>
+					<li><a href="generate">Page 1</a></li>
+					<li><a href="#">Page 2</a></li>
 				</ul>
 			</div>
 		</nav>
 	</header>
 
 	<section>
-		<div class="container-fluid text-center">
-		  <div class="row content">
-		    <div class="col-sm-2 sidenav">
-		      <p><a href="random" class="list-group-item">Why random</a></p>
-		      <p><a href="safe" class="list-group-item">Keep password safe</a></p>
-		      <p><a href="https://www.dashlane.com/" class="list-group-item">Remember easily</a></p>
-		    </div>
-		    <div class="col-sm-8 text-left">
-					@yield('headSec')
-		      @yield('content')
-		    </div>
-		  </div>
-		</div>
+		<div class="container">
+			@yield('content')
+		<div>
 
+		<form>
+			<div class="form-group">
+				<label for="email">Email:</label>
+				<input type="email" class="form-control" id="email" placeholder="Enter email">
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+				<input type="password" class="form-control" id="pwd" placeholder="Enter password">
+			</div>
+			<div class="checkbox">
+				<label><input type="checkbox"> Remember me</label>
+			</div>
+			<button type="submit" class="btn btn-info" value="Submit Button">Submit</button>
+		</form>
+		
 	</section>
 
-	<footer class="container-fluid text-center">
+	<footer>
 		&copy; {{ date('Y') }}
 	</footer>
 

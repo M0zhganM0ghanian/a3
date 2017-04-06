@@ -11,9 +11,15 @@
 |
 */
 
-Route::get('/', 'GetPasswordController@index');
-Route::post('/', 'PostPasswordController@index');
+Route::get('/', 'PracticeController@show');
 
+Route::get('/generate', 'GetPasswordController@index');
+Route::post('/generate', 'PostPasswordController@index');
+
+Route::get('/help', 'PracticeController@info');
+
+Route::get('/random', 'PracticeController@random');
+Route::get('/safe', 'PracticeController@safe');
 
 if (config('app.env') == 'local') {
   Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');

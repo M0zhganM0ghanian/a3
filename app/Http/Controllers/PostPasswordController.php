@@ -20,7 +20,7 @@ class PostPasswordController extends Controller
     $createdPassword = "";
     $method = $request->method();
 
-    if($form->isSubmitted()) {
+    if($request->isMethod('post')) {
 
       $length = $request->input('numOfWords'); # double
       $includeNum = $request->input('includeNumer'); # Boolean

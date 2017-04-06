@@ -7,35 +7,28 @@
 
 
 @push('head')
-    <link href="/css/books/show.css" type='text/css' rel='stylesheet'>
+    <link href="/css/a33.css" type='text/css' rel='stylesheet'>
 @endpush
 
 
 @section('content')
-<div class="container">
-  <h1>Password Generator</h1>
-  <div class='form'>
-    <form method='POST' action='index.php'>
+
+  <h1>Let's Try!</h1>
+  <div class="form-group">
+    <form method='POST' action='/generate'>
       {{ csrf_field() }}
 
-      <div class='NumOfWords'>
+      <div class="form-group">
         <label>Number Of Characters (required)</label>
-        <input type='text' name='numOfWords' required  id='NumOfWords' value='{{ old('numOfWords') }}'>
+        <input type='text' class="form-control" name='numOfWords' required  id='NumOfWords' placeholder="Length of Password" value='{{ old('numOfWords') }}'>
       </div>
 
-      <div class='checkbox'>
+      <div class="checkbox">
         <h3>Main criteria</h3>
-        <input type='checkbox' name='includeNumer'>
-        <label>Include Number</label><br>
-
-        <input type='checkbox' name='includeSymbols'>
-        <label>Include Symboles</label><br>
-
-        <input type='checkbox' name='excludeSimilar'>
-        <label>Exclude Similar Characters e.g. (i, l, 1, L, o, 0, O)</label><br>
-
-        <input type='checkbox' name='excludeAmbiguous'>
-        <label>Exclude Ambiguous Characters e.g. ({ } [ ] ( ) / \ ' " ` ~ , ; : . )</label><br>
+        <label><input type="checkbox" name='includeNumer'> Include Number</label><br>
+        <label><input type='checkbox' name='includeSymbols'> Include Symboles</label><br>
+        <label><input type='checkbox' name='excludeSimilar'> Exclude Similar Characters e.g. (i, l, 1, L, o, 0, O)</label><br>
+        <label><input type='checkbox' name='excludeAmbiguous'> Exclude Ambiguous Characters e.g. ({ } [ ] ( ) / \ ' " ` ~ , ; : . )</label><br>
       </div>
 
       <div class="radio">
@@ -45,11 +38,11 @@
         <label><input type="radio" name="case" value="Mixed">Mixed</label>
       </div>
 
-      <input type='submit' id='btn'>
+      <input type='submit' id='btn' class="btn btn-info" value="Submit">
       <br>
     </form>
   </div>
-</div>
+
 @if(count($errors) > 0)
   <div class='alert alert-danger'>
     <ul>
@@ -62,10 +55,11 @@
 
 @if($form->isSubmitted())
 
-  <div class='alert alert-info'>Number of words : <?=$form->sanitize($length)?></div>
-        <div class="result">
-          <h2><?=$createdPassword?></h2>
-        </div>
+
+  <div class="panel panel-success">
+    <div class="panel-heading">Choosen length: {{ $length }}</div>
+    <div class="panel-body"><h4>Your password: {{ $createdPassword }}</h4></div>
+  </div>
 @endif
 
 @endsection
