@@ -6,17 +6,9 @@ use Illuminate\Http\Request;
 
 class PracticeController extends Controller
 {
-      /**
-    * GET
-    * /books/{title?}
-    */
-    public function show() {
-        return view('results.start');
-    }
-
     /**
   * GET
-  * /books/{title?}
+  * /help
   */
   public function info() {
       return view('results.info');
@@ -24,7 +16,7 @@ class PracticeController extends Controller
 
     /**
   * GET
-  * /books/{title?}
+  * /safe
   */
   public function safe() {
       return view('links.safe');
@@ -33,10 +25,18 @@ class PracticeController extends Controller
 
   /**
   * GET
-  * /books/{title?}
+  * /random
   */
   public function random() {
     return view('links.random');
+  }
+
+  /**
+  * GET
+  * /strong
+  */
+  public function strong() {
+    return view('links.strong');
   }
 
 }

@@ -8,6 +8,6 @@ class WelcomeController extends Controller
 {
 
     public function index(){
-      return view('results.show');
+      return view('results.start');
     }
 }

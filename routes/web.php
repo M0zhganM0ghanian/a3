@@ -11,14 +11,15 @@
 |
 */
 
-Route::get('/', 'PracticeController@show');
+Route::get('/', 'WelcomeController@index');
 
 Route::get('/generate', 'GetPasswordController@index');
 Route::post('/generate', 'PostPasswordController@index');
 
 Route::get('/help', 'PracticeController@info');
-
 Route::get('/random', 'PracticeController@random');
+
+Route::get('/strong', 'PracticeController@strong');
 Route::get('/safe', 'PracticeController@safe');
 
 if (config('app.env') == 'local') {

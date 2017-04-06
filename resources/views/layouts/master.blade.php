@@ -27,7 +27,7 @@
 				<ul class="nav navbar-nav">
 					<li><a href="random">About</a></li>
 					<li><a href="generate">Generate Password</a></li>
-					<li><a href="help">Help </a></li>
+					<li><a href="help">Help</a></li>
 				</ul>
 			</div>
 		</nav>
@@ -37,7 +37,7 @@
 		<div class="container-fluid text-center">
 		  <div class="row content">
 		    <div class="col-sm-2 sidenav">
-		      <p><a href="random" class="list-group-item">Why random</a></p>
+		      <p><a href="strong" class="list-group-item">Make strong password</a></p>
 		      <p><a href="safe" class="list-group-item">Keep password safe</a></p>
 		      <p><a href="https://www.dashlane.com/" class="list-group-item">Remember easily</a></p>
 		    </div>
@@ -47,14 +47,11 @@
 		    </div>
 		  </div>
 		</div>
-
 	</section>
 
 	<footer class="container-fluid text-center">
 		&copy; {{ date('Y') }}
 	</footer>
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 
     @stack('body')
 

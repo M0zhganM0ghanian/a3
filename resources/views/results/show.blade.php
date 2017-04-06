@@ -1,18 +1,14 @@
 @extends('layouts.master')
 
-
 @section('title')
     Password Generatore
 @endsection
-
 
 @push('head')
     <link href="/css/a33.css" type='text/css' rel='stylesheet'>
 @endpush
 
-
 @section('content')
-
   <h1>Let's Try!</h1>
   <div class="form-group">
     <form method='POST' action='/generate'>
@@ -54,8 +50,6 @@
 @endif
 
 @if($form->isSubmitted())
-
-
   <div class="panel panel-success">
     <div class="panel-heading">Choosen length: {{ $length }}</div>
     <div class="panel-body"><h4>Your password: {{ $createdPassword }}</h4></div>
@@ -63,8 +57,3 @@
 @endif
 
 @endsection
-
-
-@push('body')
-
-@endpush
