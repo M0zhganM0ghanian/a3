@@ -5,7 +5,6 @@
 @endsection
 
 @push('head')
-    <link href="/css/a33.css" type='text/css' rel='stylesheet'>
 @endpush
 
 @section('content')
