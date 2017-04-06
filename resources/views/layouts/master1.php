@@ -34,7 +34,7 @@
 	<section>
 		<div class="container">
 			@yield('content')
-		<div>
+		</div>
 
 		<form>
 			<div class="form-group">
@@ -50,7 +50,7 @@
 			</div>
 			<button type="submit" class="btn btn-info" value="Submit Button">Submit</button>
 		</form>
-		
+
 	</section>
 
 	<footer>

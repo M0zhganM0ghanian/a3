@@ -33,10 +33,8 @@
     <div class="col-sm-4">
       <span class="glyphicon glyphicon-question-sign"></span>
     </div>
-
         <h3>Is it not clear enough? check the "Help" section</h3>
-
   </div>
-</div
+</div>
 
 @endsection
